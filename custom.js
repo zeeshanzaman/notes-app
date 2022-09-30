@@ -36,7 +36,16 @@ function addNewNote(text = '') {
         const { value } = e.target
 
         main.innerHTML = marked(value)
+
+        document.body.appendChild(note)
     })
 
     document.body.appendChild(note)
+}
+
+function updatesLS() {
+    const notesText = document.querySelectorAll('textarea')
+
+    const notes =
+
 }
