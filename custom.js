@@ -29,6 +29,7 @@ function addNewNote(text = '') {
     textArea.value = text
     main.innerHTML = marked(text)
 
+
     deleteBtn.addEventListener('click', () => {
         note.remove()
 
@@ -40,7 +41,13 @@ function addNewNote(text = '') {
         textArea.classList.toggle('hidden')
     })
 
-    updateLS()
+    textArea.addEventListener('input', (e) => {
+        const { value } = e.target
+
+        main.innerHTML = marked(value)
+
+        updateLS()
+    })
 
     document.body.appendChild(note)
 }
