@@ -64,3 +64,18 @@ body {
 .hidden {
     display: none;
 }
+
+
+/* 
+
+
+function updatesLS() {
+    const notesText = document.querySelectorAll('textarea')
+
+    const notes = []
+
+    notesText.forEach(note => notes.push(note.value))
+
+    console.log(notes)
+
+}*/

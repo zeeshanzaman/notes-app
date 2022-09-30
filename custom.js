@@ -1,6 +1,6 @@
 const addBtn = document.getElementById('add')
 
-addBtn.addEventListener('click', () => addNewNote())
+addBtn.addEventListener('click', () => addNewNote(''))
 
 function addNewNote(text = '') {
     const note = document.createElement('div')
@@ -32,20 +32,17 @@ function addNewNote(text = '') {
         textArea.classList.toggle('hidden')
     })
 
-    textArea.addEventListener('input', (e) => {
-        const { value } = e.target
-
-        main.innerHTML = marked(value)
-
-        document.body.appendChild(note)
-    })
+    updateLS()
 
     document.body.appendChild(note)
 }
 
-function updatesLS() {
+function updateLS() {
     const notesText = document.querySelectorAll('textarea')
 
-    const notes =
+    const notes = []
 
+    notesText.forEach(note => notes.push(note.value))
+
+    localStorage.setItem('notes', JSON.stringify(notes))
 }
