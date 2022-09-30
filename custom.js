@@ -31,6 +31,8 @@ function addNewNote(text = '') {
 
     deleteBtn.addEventListener('click', () => {
         note.remove()
+
+        updateLS()
     })
 
     editBtn.addEventListener('click', () => {
